@@ -22,6 +22,13 @@ function App() {
   const submit = (e) => {
     e.preventDefault();
 
+    //verifica dei campi vuoti
+    const { product, author, content, category } = formData;
+    if (!product.trim() || !author.trim() || !content.trim()) {
+      alert("Tutti i campi sono obbligatori!");
+      return;
+    }
+
     //reset dei campi input
     setList((current) => [...current, formData]);
     setFormData({
