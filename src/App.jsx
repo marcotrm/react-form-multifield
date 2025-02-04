@@ -7,14 +7,15 @@ function App() {
     author: "",
     content: "",
     category: "FrontEnd",
+    published: false,
   });
 
   //"modifica" dei dati
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
@@ -23,7 +24,13 @@ function App() {
 
     //reset dei campi input
     setList((current) => [...current, formData]);
-    setFormData({ product: "", author: "", category: "FrontEnd" });
+    setFormData({
+      product: "",
+      author: "",
+      content: "",
+      category: "FrontEnd",
+      published: false,
+    });
   };
 
   const [list, setList] = useState([
@@ -32,18 +39,21 @@ function App() {
       author: "Mario",
       content: "Snack leggero",
       category: "UI/UX",
+      published: true,
     },
     {
       product: "Pollo",
       author: "Luigi",
       content: "Proteina",
       category: "BackEnd",
+      published: false,
     },
     {
       product: "Yogurt",
       author: "Anna",
       content: "Colazione",
       category: "FrontEnd",
+      published: true,
     },
   ]);
 
@@ -62,6 +72,7 @@ function App() {
             <li>
               <strong>{item.product}</strong> - {item.author} ({item.category})
               <p>{item.content}</p>
+              <p>{item.published ? "Pubblicato" : "Non Pubblicato"}</p>
             </li>
           </div>
         ))}
@@ -99,6 +110,15 @@ function App() {
           <option value="BackEnd">BackEnd</option>
           <option value="UI/UX">UI/UX</option>
         </select>
+        <label>
+          <input
+            type="checkbox"
+            name="published"
+            checked={formData.published}
+            onChange={handleChange}
+          />
+          Pubblicato
+        </label>
         <button type="submit">Invia</button>
       </form>
     </div>
