@@ -1,3 +1,2 @@
-export default function Home() {
-  <p>home</p>;
-}
+function Home() {}
+export default Home;
