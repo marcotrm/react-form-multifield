@@ -6,10 +6,7 @@ function Header() {
       <div className="header-container">
         <div className="header-left">
           <img src="" alt="logo" />
-          <h1>
-            LO SCUGNIZO <br />
-            NAPOLETANO
-          </h1>
+          <h3>LO SCUGNIZO NAPOLETANO</h3>
         </div>
         <div className="header-right">
           <nav>
