@@ -12,10 +12,36 @@ function Header() {
           <nav>
             <ul>
               <li>
-                <Link to="/">Home</Link>
-                <NavLink to="/menu">Menu</NavLink>
-                <NavLink to="/aboutus">AboutUs</NavLink>
-                <NavLink to="/Contatti">Contatti</NavLink>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) => (isActive ? "active-link" : "")}
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/menu"
+                  className={({ isActive }) => (isActive ? "active-link" : "")}
+                >
+                  Menu
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/aboutus"
+                  className={({ isActive }) => (isActive ? "active-link" : "")}
+                >
+                  Chi Siamo
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/contatti"
+                  className={({ isActive }) => (isActive ? "active-link" : "")}
+                >
+                  Contatti
+                </NavLink>
               </li>
             </ul>
           </nav>

@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 function Main() {
+  const navigate = useNavigate();
+
   return (
     <main>
       <div className="main-container">
@@ -16,7 +20,9 @@ function Main() {
       </div>
       <div className="btn-main-container"></div>
       <div className="btn-container">
-        <button className="slide-up">SCOPRI IL NOSTRO MENU</button>
+        <button onClick={() => navigate("/menu")} className="slide-up">
+          SCOPRI IL NOSTRO MENU
+        </button>
       </div>
     </main>
   );

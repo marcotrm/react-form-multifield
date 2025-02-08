@@ -32,6 +32,11 @@ header h3 {
 
 .header-right ul {
   list-style: none;
+  display: flex;
+}
+
+.header-right nav ul li {
+  font-family: "Oswald", monospace;
 }
 
 .header-right ul li a {
@@ -40,4 +45,13 @@ header h3 {
   text-decoration: none;
   color: white;
   font-size: 1.125rem;
+}
+
+nav ul li a:hover {
+  color: #8a3202;
+}
+
+.active-link {
+  color: #8a3202 !important;
+  font-weight: bold;
 }
