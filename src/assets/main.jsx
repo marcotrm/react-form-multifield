@@ -6,6 +6,7 @@ import "./index.css";
 import "./styles/header.css";
 import "./styles/main.css";
 import "./styles/Footer.css";
+import "./styles/menu.css";
 
 import App from "./App.jsx";
 

@@ -43,61 +43,62 @@ function Menu() {
   }
 
   return (
-    <div className="container">
-      <h1>Lista Spesa</h1>
-      <ul>
-        {formData.map((item, index) => (
-          <div key={index} className="list-container">
-            <li>
-              <img src={item.immagine} alt="" style={{ width: "100px" }} />
-              <div>{item.descrizione}</div>
-              <p>
-                #
-                {Array.isArray(item.ingredienti)
-                  ? item.ingredienti.join("#")
-                  : item.ingredienti}
-              </p>
+    <div className="body">
+      <div className="menu-container">
+        <h1 className="menu-title">Il Nostro Menù</h1>
+        <div className="menu-grid">
+          {formData.map((pizza) => (
+            <div key={pizza.id} className="menu-item">
+              <img src={pizza.image} alt={pizza.name} className="menu-img" />
+              <h2>{pizza.name}</h2>
+              <p>{pizza.ingredients}</p>
+              <span className="menu-price">{pizza.price}</span>
               <div className="btn-delete-container">
-                <button onClick={() => handleDelete(item.id)}>🗑 Elimina</button>
+                <button onClick={() => handleDelete(pizza.id)}>
+                  🗑 Elimina
+                </button>
               </div>
-            </li>
-          </div>
-        ))}
-      </ul>
-      <hr />
-      <h2>Aggiungi Prodotto</h2>
-      <form onSubmit={handleSubmitForm}>
-        <input
-          id="immagine"
-          type="text"
-          placeholder="Insersci url immagine"
-          value={users.immagine}
-          onChange={(event) => handleFormData("immagine", event.target.value)}
-          required
-        />
-        <input
-          id="descrizione"
-          type="text"
-          placeholder="Insersci la descrizioe"
-          value={users.descrizione}
-          onChange={(event) =>
-            handleFormData("descrizione", event.target.value)
-          }
-          required
-        />
-        <input
-          id="ingredienti"
-          type="text"
-          placeholder="Insersci gli ingredienti"
-          value={users.ingredienti}
-          onChange={(event) =>
-            handleFormData("ingredienti", event.target.value)
-          }
-          required
-        />
-        <button type="submit">Invia</button>
-      </form>
+            </div>
+          ))}
+        </div>
+
+        <h2>Aggiungi Pizza</h2>
+        <form onSubmit={handleSubmitForm}>
+          <input
+            type="text"
+            placeholder="Inserisci URL immagine"
+            value={users.image}
+            onChange={(event) => handleFormData("image", event.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Inserisci il nome della pizza"
+            value={users.name}
+            onChange={(event) => handleFormData("name", event.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Inserisci gli ingredienti"
+            value={users.ingredients}
+            onChange={(event) =>
+              handleFormData("ingredients", event.target.value)
+            }
+            required
+          />
+          <input
+            type="text"
+            placeholder="Inserisci il prezzo"
+            value={users.price}
+            onChange={(event) => handleFormData("price", event.target.value)}
+            required
+          />
+          <button type="submit">Aggiungi Pizza</button>
+        </form>
+      </div>
     </div>
   );
 }
+
 export default Menu;
