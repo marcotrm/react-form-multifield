@@ -73,6 +73,35 @@ function Main() {
           </motion.div>
         </div>
       </div>
+      <div className="big-container">
+        <motion.div
+          className="col-left"
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <img
+            src="https://ischiasafari.it/assets/Uploads/_resampled/CroppedFocusedImageWzE2MDAsMTIwMCwieCIsMTg0XQ/Errico-Porzio-IschiaSafari2.jpg"
+            alt="foto di raffaele"
+          />
+        </motion.div>
+        <motion.div
+          className="col-right"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <h4>RAFFAELE SACCO</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad,
+            dignissimos adipisci expedita facere tempore ipsa aut, velit earum
+            vitae porro eaque minus libero. Ab corrupti, a maiores magni aut
+            rem.
+          </p>
+        </motion.div>
+      </div>
     </main>
   );
 }
