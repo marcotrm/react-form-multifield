@@ -29,14 +29,6 @@ function Header() {
               </li>
               <li>
                 <NavLink
-                  to="/aboutus"
-                  className={({ isActive }) => (isActive ? "active-link" : "")}
-                >
-                  Chi Siamo
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
                   to="/contatti"
                   className={({ isActive }) => (isActive ? "active-link" : "")}
                 >
