@@ -98,7 +98,17 @@ function Main() {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad,
             dignissimos adipisci expedita facere tempore ipsa aut, velit earum
             vitae porro eaque minus libero. Ab corrupti, a maiores magni aut
-            rem.
+            rem. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis
+            obcaecati est eum voluptate reiciendis, dolores a soluta, sed
+            quisquam molestias suscipit fugiat corrupti dicta esse beatae sit,
+            hic quos. Architecto? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Nobis, quos recusandae? Nisi voluptas provident
+            eos obcaecati vitae ducimus, voluptatibus nulla, tempore quo
+            inventore quam, autem minima. Temporibus ratione maxime facere?Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+            asperiores enim id quo exercitationem, blanditiis dolorem minus
+            voluptas, ullam numquam recusandae accusamus molestiae esse amet
+            adipisci praesentium pariatur nemo fuga!Lorem
           </p>
         </motion.div>
       </div>
