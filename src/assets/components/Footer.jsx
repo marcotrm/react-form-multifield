@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer>
+    <footer id="footer">
       <div className="container-footer">
         <div className="footer-top">
           <img src="" alt="logo" />

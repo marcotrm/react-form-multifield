@@ -1,4 +1,5 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
 
 function Header() {
   return (
@@ -28,12 +29,9 @@ function Header() {
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to="/contatti"
-                  className={({ isActive }) => (isActive ? "active-link" : "")}
-                >
+                <Link to="footer" smooth={true} duration={400}>
                   Contatti
-                </NavLink>
+                </Link>
               </li>
             </ul>
           </nav>
