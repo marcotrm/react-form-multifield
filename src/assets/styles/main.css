@@ -2,7 +2,7 @@ main {
   background-color: #212121;
   min-height: 100vh;
 }
-
+/* FIRST MAIN */
 .main-container {
   width: 1000px;
   margin: auto;
@@ -148,3 +148,42 @@ button:active {
   animation: slideUp 0.8s ease-out 0.9s both;
 }
 /* ANIMATION */
+/* FIRST MAIN */
+
+/* SECOND MAIN */
+.container {
+  width: 1000px;
+  margin: auto;
+  margin-top: 70px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.col {
+  width: calc(100% / 3);
+  padding: 12px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.col h2,
+p {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.col h2 {
+  color: darkslategray;
+  font-weight: 12px;
+}
+.col p {
+  font-size: 16px;
+  color: gray;
+}
+/* SECOND MAIN */
