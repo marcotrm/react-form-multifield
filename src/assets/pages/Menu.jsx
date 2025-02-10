@@ -3,14 +3,15 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const initialData = {
-  immagine: "",
-  descrizione: "",
-  ingredienti: "",
+  name: "",
+  ingredients: "",
+  price: "",
+  image: "",
 };
 
 function Menu() {
   const [menu, setMenu] = useState([]);
-  const [users, setUsers] = useState(initialData);
+  const [pizza, setPizza] = useState(initialData);
 
   function fetchData() {
     axios
@@ -18,19 +19,19 @@ function Menu() {
       .then((res) => setMenu(res.data.default));
   }
 
+  useEffect(fetchData, []);
+
   const handlemenu = (fieldName, value) => {
-    setUsers((prev) => {
+    setPizza((prev) => {
       return { ...prev, [fieldName]: value };
     });
   };
 
-  useEffect(fetchData, []);
-
   const handleSubmitForm = (event) => {
     event.preventDefault();
-    axios.post("http://localhost:3000/posts", users).then((response) => {
+    axios.post("http://localhost:3000/posts", pizza).then((response) => {
       setMenu((prev) => [...prev, response.data]);
-      setUsers(initialData);
+      setPizza(initialData);
     });
   };
 
@@ -74,28 +75,28 @@ function Menu() {
           <input
             type="text"
             placeholder="Inserisci URL immagine"
-            value={users.image}
+            value={pizza.image}
             onChange={(event) => handlemenu("image", event.target.value)}
             required
           />
           <input
             type="text"
             placeholder="Inserisci il nome della pizza"
-            value={users.name}
+            value={pizza.name}
             onChange={(event) => handlemenu("name", event.target.value)}
             required
           />
           <input
             type="text"
             placeholder="Inserisci gli ingredienti"
-            value={users.ingredients}
+            value={pizza.ingredients}
             onChange={(event) => handlemenu("ingredients", event.target.value)}
             required
           />
           <input
             type="text"
             placeholder="Inserisci il prezzo"
-            value={users.price}
+            value={pizza.price}
             onChange={(event) => handlemenu("price", event.target.value)}
             required
           />
