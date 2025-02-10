@@ -1,0 +1,42 @@
+.pizza-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.pizza-detail-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.pizza-detail-image {
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.pizza-detail-info {
+  flex: 1;
+}
+
+.pizza-detail-info h1 {
+  margin-bottom: 15px;
+}
+
+.pizza-ingredients {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.pizza-price {
+  font-weight: bold;
+  color: #e74c3c;
+}
