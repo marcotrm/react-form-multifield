@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./menu.css";
 
 const initialData = {
   immagine: "",
@@ -58,11 +57,6 @@ function Menu() {
                   className="menu-img"
                 />
               </Link>
-              <img
-                src={`http://localhost:3000${pizza.image}`}
-                alt={pizza.name}
-                className="menu-img"
-              />
               <h2>{pizza.name}</h2>
               <p>{pizza.ingredients}</p>
               <span className="menu-price">{pizza.price}</span>
