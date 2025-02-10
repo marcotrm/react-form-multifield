@@ -14,9 +14,7 @@ function Menu() {
   const [pizza, setPizza] = useState(initialData);
 
   function fetchData() {
-    axios
-      .get("http://localhost:3000/posts")
-      .then((res) => setMenu(res.data.default));
+    axios.get("http://localhost:3000/posts").then((res) => setMenu(res.data));
   }
 
   useEffect(fetchData, []);
