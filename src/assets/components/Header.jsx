@@ -6,7 +6,7 @@ function Header() {
     <header>
       <div className="header-container">
         <div className="header-left">
-          <img src="" alt="logo" />
+          <img src="public/logo.svg" alt="logo" />
           <h3>LO SCUGNIZO NAPOLETANO</h3>
         </div>
         <div className="header-right">
