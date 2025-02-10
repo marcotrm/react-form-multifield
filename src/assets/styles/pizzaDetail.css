@@ -1,42 +1,74 @@
-.pizza-detail-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+.detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-.back-button {
+.detail-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.3s ease-in-out;
+}
+
+.detail-container.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  margin-bottom: 20px;
+  z-index: 2;
 }
 
-.pizza-detail-content {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
 
-.pizza-detail-image {
-  max-width: 400px;
-  border-radius: 10px;
+.nav-button.left {
+  left: -20px;
 }
 
-.pizza-detail-info {
-  flex: 1;
+.nav-button.right {
+  right: -20px;
 }
 
-.pizza-detail-info h1 {
-  margin-bottom: 15px;
+.pizza-content {
+  text-align: center;
 }
 
-.pizza-ingredients {
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.pizza-price {
-  font-weight: bold;
-  color: #e74c3c;
+.pizza-content img {
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  margin-bottom: 1rem;
 }

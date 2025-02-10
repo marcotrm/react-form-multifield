@@ -7,7 +7,7 @@ import "./styles/header.css";
 import "./styles/main.css";
 import "./styles/Footer.css";
 import "./styles/menu.css";
-import "./styles/PizzaDetail.css";
+import "./styles/pizzaDetail.css";
 
 import App from "./App.jsx";
 
