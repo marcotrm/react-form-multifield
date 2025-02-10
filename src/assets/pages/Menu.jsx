@@ -8,16 +8,16 @@ const initialData = {
 };
 
 function Menu() {
-  const [formData, setFormData] = useState([]);
+  const [menu, setMenu] = useState([]);
   const [users, setUsers] = useState(initialData);
 
   function fetchData() {
     axios
       .get("http://localhost:3000/posts")
-      .then((res) => setFormData(res.data));
+      .then((res) => setMenu(res.data.default));
   }
 
-  const handleFormData = (fieldName, value) => {
+  const handlemenu = (fieldName, value) => {
     setUsers((prev) => {
       return { ...prev, [fieldName]: value };
     });
@@ -28,7 +28,7 @@ function Menu() {
   const handleSubmitForm = (event) => {
     event.preventDefault();
     axios.post("http://localhost:3000/posts", users).then((response) => {
-      setFormData((prev) => [...prev, response.data]);
+      setMenu((prev) => [...prev, response.data]);
       setUsers(initialData);
     });
   };
@@ -38,7 +38,7 @@ function Menu() {
     axios
       .delete(`http://localhost:3000/posts/${id}`)
       .then(() =>
-        setFormData((current) => current.filter((item) => item.id !== id))
+        setMenu((current) => current.filter((item) => item.id !== id))
       );
   }
 
@@ -47,9 +47,13 @@ function Menu() {
       <div className="menu-container">
         <h1 className="menu-title">Il Nostro Menù</h1>
         <div className="menu-grid">
-          {formData.map((pizza) => (
+          {menu.map((pizza) => (
             <div key={pizza.id} className="menu-item">
-              <img src={pizza.image} alt={pizza.name} className="menu-img" />
+              <img
+                src={`http://localhost:3000${pizza.image}`}
+                alt={pizza.name}
+                className="menu-img"
+              />
               <h2>{pizza.name}</h2>
               <p>{pizza.ingredients}</p>
               <span className="menu-price">{pizza.price}</span>
@@ -68,30 +72,28 @@ function Menu() {
             type="text"
             placeholder="Inserisci URL immagine"
             value={users.image}
-            onChange={(event) => handleFormData("image", event.target.value)}
+            onChange={(event) => handlemenu("image", event.target.value)}
             required
           />
           <input
             type="text"
             placeholder="Inserisci il nome della pizza"
             value={users.name}
-            onChange={(event) => handleFormData("name", event.target.value)}
+            onChange={(event) => handlemenu("name", event.target.value)}
             required
           />
           <input
             type="text"
             placeholder="Inserisci gli ingredienti"
             value={users.ingredients}
-            onChange={(event) =>
-              handleFormData("ingredients", event.target.value)
-            }
+            onChange={(event) => handlemenu("ingredients", event.target.value)}
             required
           />
           <input
             type="text"
             placeholder="Inserisci il prezzo"
             value={users.price}
-            onChange={(event) => handleFormData("price", event.target.value)}
+            onChange={(event) => handlemenu("price", event.target.value)}
             required
           />
           <button type="submit">Aggiungi Pizza</button>
